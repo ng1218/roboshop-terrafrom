@@ -223,7 +223,7 @@ resource "azurerm_virtual_machine" "user" {
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
   network_interface_ids = [azurerm_network_interface.user.id]
-  vm_size               = "Standard_B2s"
+  vm_size               = "Standard_F2S_v2"
 
   delete_os_disk_on_termination = true
 
@@ -320,7 +320,7 @@ resource "azurerm_virtual_machine" "mysql" {
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
   network_interface_ids = [azurerm_network_interface.mysql.id]
-  vm_size               = "Standard_B2s"
+  vm_size               = "Standard_F2S_v2"
 
   delete_os_disk_on_termination = true
 
@@ -368,7 +368,7 @@ resource "azurerm_virtual_machine" "shipping" {
   location              = "UK West"
   resource_group_name   = "myfirstvm_group"
   network_interface_ids = [azurerm_network_interface.shipping.id]
-  vm_size               = "Standard_B2s"
+  vm_size               = "Standard_F2S_v2"
 
   delete_os_disk_on_termination = true
 
