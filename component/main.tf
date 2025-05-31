@@ -51,6 +51,22 @@ resource "azurerm_network_interface_security_group_association" "nsg-attach" {
   network_security_group_id = var.network_security_group_id
 }
 
+resource "null_resource" "web" {
+
+  connection {
+    type = "ssh"
+    user = "azuser"
+    password = "devops@123456"
+    host = azurerm_network_interface.privateip.id
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo dnf install python3.12 python3.12-pip -y",
+      "sudo pip3.12 install ansible"
+    ]
+  }
+}
 resource "azurerm_dns_a_record" "dns_record" {
   name                  = "${var.name}-dev"
   zone_name             = var.zone_name
