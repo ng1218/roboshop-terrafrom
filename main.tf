@@ -14,7 +14,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "mongodb" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -24,7 +24,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "mysql" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -34,7 +34,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "redis" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -44,7 +44,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "catalogue" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -54,7 +54,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "user" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -64,7 +64,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "frcartontend" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -74,7 +74,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "shipping" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -84,7 +84,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "rabbitmq" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
@@ -94,7 +94,7 @@ module "frontend" {
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 }
 
-module "frontend" {
+module "payment" {
   source                     = "./components"
   resource_group_name        = var.resource_group_name
   location                   = var.location
