@@ -46,6 +46,11 @@ resource "azurerm_virtual_machine" "vm" {
   }
 }
 
+resource "azurerm_subnet_network_security_group_association" "example" {
+  subnet_id                 = azurerm_network_interface.privateip.id
+  network_security_group_id = var.network_security_group_id
+}
+
 resource "azurerm_dns_a_record" "dns_record" {
   name                  = "${var.name}-dev"
   zone_name             = var.zone_name

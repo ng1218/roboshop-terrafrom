@@ -17,3 +17,8 @@ variable "storage_image_reference" {
 variable "ip_configuration_subnet_id" {
   default = "/subscriptions/1c8859e3-276f-40f1-afc9-1dd8f8dc18d7/resourceGroups/myfirstvm_group/providers/Microsoft.Network/virtualNetworks/myfirstvm-vnet/subnets/default"
 }
+
+variable "network_security_group_id" {
+    default = "/subscriptions/1c8859e3-276f-40f1-afc9-1dd8f8dc18d7/resourceGroups/raghuproject_resources/providers/Microsoft.Network/networkSecurityGroups/allow-all-test"
+  
+}
