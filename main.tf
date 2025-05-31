@@ -1,9 +1,3 @@
-# Configure the Microsoft Azure Provider
-provider "azurerm" {
-  features {}
-  subscription_id = "1c8859e3-276f-40f1-afc9-1dd8f8dc18d7"
-}
-
 module "frontend" {
   source                     = "./component"
   resource_group_name        = var.resource_group_name
@@ -15,7 +9,7 @@ module "frontend" {
 }
 
 module "mongodb" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "mongodb"
@@ -25,7 +19,7 @@ module "mongodb" {
 }
 
 module "mysql" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "mysql"
@@ -35,7 +29,7 @@ module "mysql" {
 }
 
 module "redis" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "redis"
@@ -45,7 +39,7 @@ module "redis" {
 }
 
 module "catalogue" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "catalogue"
@@ -55,7 +49,7 @@ module "catalogue" {
 }
 
 module "user" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "user"
@@ -65,7 +59,7 @@ module "user" {
 }
 
 module "frcartontend" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "cart"
@@ -75,7 +69,7 @@ module "frcartontend" {
 }
 
 module "shipping" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "shipping"
@@ -85,7 +79,7 @@ module "shipping" {
 }
 
 module "rabbitmq" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "rabbitmq"
@@ -95,7 +89,7 @@ module "rabbitmq" {
 }
 
 module "payment" {
-  source                     = "./components"
+  source                     = "./component"
   resource_group_name        = var.resource_group_name
   location                   = var.location
   name                       = "payment"
