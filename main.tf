@@ -6,7 +6,6 @@ module "frontend" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
 }
 
 module "mongodb" {
@@ -17,7 +16,7 @@ module "mongodb" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "mysql" {
@@ -28,7 +27,7 @@ module "mysql" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "redis" {
@@ -39,7 +38,7 @@ module "redis" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "catalogue" {
@@ -50,7 +49,7 @@ module "catalogue" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "user" {
@@ -61,7 +60,7 @@ module "user" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "frcartontend" {
@@ -72,7 +71,7 @@ module "frcartontend" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "shipping" {
@@ -83,7 +82,7 @@ module "shipping" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "rabbitmq" {
@@ -94,7 +93,7 @@ module "rabbitmq" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
 
 module "payment" {
@@ -105,5 +104,5 @@ module "payment" {
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-  network_security_group_id  = var.network_security_group_id
+  #network_security_group_id  = var.network_security_group_id
 }
