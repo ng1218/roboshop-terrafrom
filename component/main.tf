@@ -52,6 +52,9 @@ resource "azurerm_network_interface_security_group_association" "nsg-attach" {
 }
 
 resource "null_resource" "ansible" {
+  depends_on = [
+    azurerm_virtual_machine.vm
+  ]
   connection {
     type = "ssh"
     user = "azuser"
