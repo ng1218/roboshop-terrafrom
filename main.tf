@@ -11,7 +11,7 @@ module "databases" {
 }
 
 module "applications" {
-  depends_on                 = [ module.databases  ]
+  depends_on                 = [ module.databases ]
   for_each                   = var.applications
   source                     = "./component"
   resource_group_name        = var.resource_group_name
