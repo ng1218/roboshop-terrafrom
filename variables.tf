@@ -2,10 +2,6 @@ variable "resource_group_name" {
   default = "myfirstvm_group"
 }
 
-variable "location" {
-  default = "UK West"
-}
-
 variable "zone_name" {
   default = "nareshdevops1218.online"
 }

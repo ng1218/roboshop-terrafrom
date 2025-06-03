@@ -2,7 +2,6 @@ module "databases" {
   for_each                   = var.databases
   source                     = "./component"
   resource_group_name        = var.resource_group_name
-  location                   = var.location
   name                       = each.key
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
@@ -15,7 +14,6 @@ module "applications" {
   for_each                   = var.applications
   source                     = "./component"
   resource_group_name        = var.resource_group_name
-  location                   = var.location
   name                       = each.key
   zone_name                  = var.zone_name
   storage_image_reference    = var.storage_image_reference
