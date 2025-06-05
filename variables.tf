@@ -40,9 +40,9 @@
 # }
 
 variable "rg_name" {
-  
+  default = "myfirstvm_group"
 }
 
 variable "rg_location" {
-  
+  default = "UK West"
 }
