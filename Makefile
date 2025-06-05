@@ -6,6 +6,7 @@ dev-apply:
 
 dev-destroy:
 	git pull
+	rm -rf .terraform/terraform.state
 	terraform init --backend-config=environments/dev/state.tfvars
 	terraform destroy -auto-approve --var-file=environments/dev/main.tfvars
 
@@ -17,5 +18,6 @@ prod-apply:
 
 prod-destroy:
 	git pull
+	rm -rf .terraform/terraform.state
 	terraform init --backend-config=environments/prod/state.tfvars
 	terraform destroy -auto-approve --var-file=environments/prod/main.tfvars
