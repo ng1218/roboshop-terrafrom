@@ -24,6 +24,6 @@
 module "resource-group" {
   source        = "./modules/resource-group"
   name          = var.rg_name
-  rg_location   = var.rg_location
+  location      = var.rg_location
 
 }

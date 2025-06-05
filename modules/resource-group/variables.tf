@@ -1,3 +1,3 @@
 variable "name" {}
 
-variable "rg_location" {}
+variable "location" {}
