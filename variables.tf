@@ -39,10 +39,6 @@
 #     }
 # }
 
-variable "rg_name" {
-  default = "myfirstvm_group"
-}
+variable "rg_name" {}
 
-variable "rg_location" {
-  default = "UK West"
-}
+variable "rg_location" {}
