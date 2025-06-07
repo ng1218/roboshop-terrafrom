@@ -8,7 +8,7 @@ module "resource-group" {
 module "databases" {
   for_each                   = var.databases
   source                     = "./modules/vm"
-  rg_name                    = module.resource-group[each.value["rgname"]].name
+  rg_name                    = module.resource-group[each.value["rgname"]].rgname
   location                   = module.resource-group[each.value["rgname"]].location
   name                       = each.key
   zone_name                  = var.zone_name
