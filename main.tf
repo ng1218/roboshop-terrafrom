@@ -5,17 +5,17 @@ module "resource-group" {
   location      = each.value["location"]
 }
 
-# module "databases" {
-#   for_each                   = var.databases
-#   source                     = "./modules/vm"
-#   rg_name                    = module.azurerm_resource_group[each.value["rgname"]]
-#   name                       = each.key
-#   zone_name                  = var.zone_name
-#   storage_image_reference    = var.storage_image_reference
-#   ip_configuration_subnet_id = var.ip_configuration_subnet_id
-#   network_security_group_id  = var.network_security_group_id
-#   dns_record_resource_group  = var.dns_record_resource_group
-# }
+module "databases" {
+  for_each                   = var.databases
+  source                     = "./modules/vm"
+  rg_name                    = module.resource-group[each.value["name"]].name
+  name                       = each.key
+  zone_name                  = var.zone_name
+  storage_image_reference    = var.storage_image_reference
+  ip_configuration_subnet_id = var.ip_configuration_subnet_id
+  network_security_group_id  = var.network_security_group_id
+  dns_record_resource_group  = var.dns_record_resource_group
+}
 
 # module "applications" {
 #   depends_on                 = [ module.databases ]
@@ -30,5 +30,5 @@ module "resource-group" {
 # }
 
 output "test" {
-  value = module.resource-group["ukwest"]
+  value = module.resource-group["ukwest"].name
 }
