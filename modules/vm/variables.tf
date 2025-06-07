@@ -2,6 +2,8 @@ variable "name" {}
 
 variable "rg_name" {}
 
+variable "location" {}
+
 variable "zone_name" {}
 
 variable "storage_image_reference" {}
