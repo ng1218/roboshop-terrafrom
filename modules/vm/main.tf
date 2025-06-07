@@ -70,10 +70,10 @@ resource "null_resource" "ansible" {
     ]
   }
 }
-resource "azurerm_dns_a_record" "dns_record" {
+resource "azurerm_dns_a_record" "dns_record_resource_group" {
   name                  = "${var.name}-dev"
   zone_name             = var.zone_name
-  resource_group_name   = var.rg_name
+  resource_group_name   = var.dns_record_resource_group
   ttl                   = 3
   records               = [azurerm_network_interface.privateip.private_ip_address]
 }

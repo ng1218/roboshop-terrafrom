@@ -1,12 +1,21 @@
+module "resource-group" {
+  for_each      = var.rg_name
+  source        = "./modules/resource-group"
+  name          = each.key
+  location      = each.value["location"]
+
+}
+
 # module "databases" {
 #   for_each                   = var.databases
-#   source                     = "./component"
-#   resource_group_name        = var.resource_group_name
+#   source                     = "./modules/vm"
+#   rg_name                    = module.azurerm_resource_group[each.value["rgname"]]
 #   name                       = each.key
 #   zone_name                  = var.zone_name
 #   storage_image_reference    = var.storage_image_reference
 #   ip_configuration_subnet_id = var.ip_configuration_subnet_id
 #   network_security_group_id  = var.network_security_group_id
+#   dns_record_resource_group  = var.dns_record_resource_group
 # }
 
 # module "applications" {
@@ -21,9 +30,6 @@
 #   network_security_group_id  = var.network_security_group_id
 # }
 
-module "resource-group" {
-  source        = "./modules/resource-group"
-  name          = var.rg_name
-  location      = var.rg_location
-
+output "test" {
+  value = module.resource-group
 }
