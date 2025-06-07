@@ -31,7 +31,6 @@ applications {
 
 rg_name {
     ukwest = {
-        name      = {var.env}
         location  = "UK West"
     }
 }
