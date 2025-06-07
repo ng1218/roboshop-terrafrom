@@ -31,7 +31,3 @@ module "applications" {
   network_security_group_id  = var.network_security_group_id
   dns_record_resource_group  = var.dns_record_resource_group
 }
-
-output "test" {
-  value = module.resource-group["ukwest"].rgname
-}
