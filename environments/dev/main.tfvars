@@ -29,7 +29,7 @@ applications = {
     frontend = {}
 }
 
-rg_name {
+rg_name = {
     ukwest = {
         location  = "UK West"
     }
