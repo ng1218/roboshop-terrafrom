@@ -1,5 +1,4 @@
 env                         = "dev"
-rg_location                 = "Uk West"
 zone_name                   = "nareshdevops1218.online"
 dns_record_resource_group   = "myfirstvm_group"
 storage_image_reference     = "/subscriptions/1c8859e3-276f-40f1-afc9-1dd8f8dc18d7/resourceGroups/myfirstvm_group/providers/Microsoft.Compute/images/local-devops-practice"
