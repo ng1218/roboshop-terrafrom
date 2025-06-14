@@ -17,3 +17,5 @@ variable "network_security_group_id" {}
 variable "dns_record_resource_group" {}
 
 variable "zone_name" {}
+
+variable "token" {}
