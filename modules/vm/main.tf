@@ -38,8 +38,8 @@ resource "azurerm_virtual_machine" "vm" {
   }
   os_profile {
     computer_name  = var.name
-    admin_username = data.vault_generic_secret.roboshop_infra["username"]
-    admin_password = data.vault_generic_secret.roboshop_infra["password"]
+    admin_username = data.vault_generic_secret.roboshop_infra.data["username"]
+    admin_password = data.vault_generic_secret.roboshop_infra.data["password"]
   }
   os_profile_linux_config {
     disable_password_authentication = false
