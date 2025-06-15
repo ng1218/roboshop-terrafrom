@@ -51,25 +51,25 @@ resource "azurerm_network_interface_security_group_association" "nsg-attach" {
   network_security_group_id = var.network_security_group_id
 }
 
-# resource "null_resource" "ansible" {
-#   depends_on = [
-#     azurerm_virtual_machine.vm
-#   ]
-#   connection {
-#     type = "ssh"
-#     user = "azuser"
-#     password = "devops@123456"
-#     host = azurerm_network_interface.privateip.private_ip_address
-#   }
+resource "null_resource" "ansible" {
+  depends_on = [
+    azurerm_virtual_machine.vm
+  ]
+  connection {
+    type = "ssh"
+    user = data.vault_generic_secret.roboshop_infra.data["username"]
+    password = data.vault_generic_secret.roboshop_infra.data["password"]
+    host = azurerm_network_interface.privateip.private_ip_address
+  }
 
-#   provisioner "remote-exec" {
-#     inline = [
-#       "sudo dnf install python3.12 python3.12-pip -y",
-#       "sudo pip3.12 install ansible",
-#       "ansible-pull -i localhost, -U https://github.com/ng1218/roboshop-ansible roboshop.yml -e app_name=${var.name} -e env=dev"
-#     ]
-#   }
-# }
+  provisioner "remote-exec" {
+    inline = [
+      "sudo dnf install python3.12 python3.12-pip -y",
+      "sudo pip3.12 install ansible",
+      "ansible-pull -i localhost, -U https://github.com/ng1218/roboshop-ansible roboshop.yml -e app_name=${var.name} -e env=dev -e token=$(token)"
+    ]
+  }
+}
 resource "azurerm_dns_a_record" "dns_record_resource_group" {
   name                  = "${var.name}-dev"
   zone_name             = var.zone_name
