@@ -17,6 +17,7 @@ module "databases" {
   network_security_group_id  = var.network_security_group_id
   dns_record_resource_group  = var.dns_record_resource_group
   token                      = var.token
+  type                       = "db"
 }
 
 module "applications" {
@@ -32,4 +33,5 @@ module "applications" {
   network_security_group_id  = var.network_security_group_id
   dns_record_resource_group  = var.dns_record_resource_group
   token                      = var.token
+  type                       = "app"
 }

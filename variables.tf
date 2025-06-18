@@ -19,3 +19,5 @@ variable "dns_record_resource_group" {}
 variable "zone_name" {}
 
 variable "token" {}
+
+variable "type" {}
