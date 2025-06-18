@@ -46,3 +46,9 @@ rg_name = {
         location  = "UK West"
     }
 }
+
+aks_cluster = {
+    main-dev = {
+        rgname    = "ukwest"
+    }
+}

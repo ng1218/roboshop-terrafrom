@@ -21,3 +21,7 @@ variable "zone_name" {}
 variable "token" {}
 
 variable "type" {}
+
+variable "aks_cluster" {
+  
+}
