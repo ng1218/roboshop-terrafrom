@@ -36,14 +36,10 @@ module "resource-group" {
 #   type                       = "app"
 # }
 
-# module "mian-dev" {
-#   for_each  = var.aks_cluster
-#   source    = "./modules/aks"
-#   name      = each.key 
-#   rg_name   = module.resource-group[each.value["rgname"]].rgname
-#   location  = module.resource-group[each.value["rgname"]].location
-# }
-
-output "name1" {
-  value = module.resource-group
+module "mian-dev" {
+  for_each  = var.aks_cluster
+  source    = "./modules/aks"
+  name      = each.key
+  rg_name   = module.resource-group[each.value["rgname"]].rgname
+  location  = module.resource-group[each.value["rgname"]].location
 }
